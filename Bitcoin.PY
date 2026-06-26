@@ -219,3 +219,22 @@ def main():
     ConsolePrinter.show_json(
         report
     )
+
+    print()
+    print("Wallet:", signer.wallet())
+    print("Network Label:", signer.context.tags["primary_network"])
+    print("Asset Symbol:", signer.context.tags["asset_symbol"])
+    print("Transaction Hash:", signed.hash.hex())
+
+    # Optional broadcast
+    # tx_hash = signer.web3.eth.send_raw_transaction(
+    #     signed.raw_transaction
+    # )
+    # print(tx_hash.hex())
+
+    ConsolePrinter.footer()
+
+
+if __name__ == "__main__":
+    main()
+```
